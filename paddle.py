@@ -10,10 +10,11 @@ class Paddle:
         self.segments = []
         self.create_paddle()
 
-
+    # TODO 2 : Create the paddle
     def create_paddle(self):
         for position in STARTING_POSITIONS:
             self.add_segment(position)
+
 
     def add_segment(self, position):
         segment = Turtle(shape="square")
@@ -21,3 +22,14 @@ class Paddle:
         segment.penup()
         segment.goto(position)
         self.segments.append(segment)
+
+        # TODO 3 : Make the paddle move
+    def paddle_up(self):
+        for segment in self.segments:
+            new_y = segment.ycor() + MOVE_DISTANCE
+            segment.goto(segment.xcor(), new_y)
+
+    def paddle_down(self):
+        for segment in self.segments:
+            new_y = segment.ycor() - MOVE_DISTANCE
+            segment.goto(segment.xcor(), new_y)
