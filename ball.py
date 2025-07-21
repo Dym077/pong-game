@@ -1,6 +1,6 @@
 from turtle import Turtle
 import random as r
-
+#TODO 4: Create the ball
 class Ball(Turtle):
 
     def __init__(self):
@@ -12,6 +12,7 @@ class Ball(Turtle):
         self.goto(0,0)
         self.rand_pos()
 
+# TODO 5: Make the ball move
     def move(self):
         self.setx(self.xcor() + self.x_move)
         self.sety(self.ycor() + self.y_move)
