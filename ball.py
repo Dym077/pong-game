@@ -7,20 +7,16 @@ class Ball(Turtle):
         super().__init__()
         self.speed(0.0)
         self.color("white")
-        self.pu()
         self.shape("circle")
-        self.goto(0,0)
-        self.rand_pos()
+        self.pu()
 
 # TODO 5: Make the ball move
     def move(self):
-        self.setx(self.xcor() + self.x_move)
-        self.sety(self.ycor() + self.y_move)
+        new_x = self.xcor() + 10
+        new_y = self.ycor() + 10
+        self.goto(new_x, new_y)
 
-    def rand_pos(self):
-        directions = [-1, 1]
-        self.x_move = 2.5 * r.choice(directions)
-        self.y_move = 2.5 * r.choice(directions)
+
 
 
 
