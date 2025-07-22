@@ -24,8 +24,14 @@ screen.onkey(left_paddle.go_down, "s")
 game_is_on = True
 while game_is_on:
     time.sleep(0.1)
-    ball.move()
     screen.update()
+    ball.move()
+
+    # Detect collision with wall
+    if ball.ycor() > 280 or ball.ycor() < -280:
+        #print(f"Före studs: y={ball.ycor()}, y_move={ball.y_move}")
+        ball.bounce()
+        #print(f"Efter studs: y={ball.ycor()}, y_move={ball.y_move}")
 
 screen.exitonclick()
 
