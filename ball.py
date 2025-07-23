@@ -19,10 +19,11 @@ class Ball(Turtle):
         self.goto(new_x, new_y)
 
 # TODO 6: Make the ball bounce
-    def bounce(self):
+    def bounce_y(self):
         self.y_move *= -1
 
-
+    def bounce_x(self):
+        self.x_move *= -1
 
 
 
